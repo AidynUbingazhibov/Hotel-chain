@@ -68,8 +68,8 @@ public class AuthRouter extends HttpServlet {
             String username = req.getParameter("username");
             String password = req.getParameter("password");
             String repeatedPassword = req.getParameter("repeatedPassword");
-            String firstName = req.getParameter("username");
-            String secondName = req.getParameter("password");
+            String firstName = req.getParameter("firstName");
+            String secondName = req.getParameter("secondName");
             controller.register(username, firstName, secondName, password, repeatedPassword);
             Result<User> result = new Result<>(ResultStatus.success, "Successfully registered");
 

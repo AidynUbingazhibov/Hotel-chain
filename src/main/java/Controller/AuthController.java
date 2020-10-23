@@ -17,7 +17,7 @@ public class AuthController {
     *  Check whether the password confirmed
     */
     public boolean isPasswordConfirmed(String password, String repeated) {
-         return password == repeated;
+         return password.equals(repeated);
     }
 
     /*
@@ -47,6 +47,7 @@ public class AuthController {
         preparedStatement.setString(2, password);
 
         ResultSet resultSet = preparedStatement.executeQuery();
+        resultSet.next();
 
         return new AuthConverter(resultSet).singleUser();
     }
